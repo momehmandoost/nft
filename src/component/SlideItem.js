@@ -13,7 +13,7 @@ import { COLORS } from "../../constants/theme.js"
 
 const { width, height } = Dimensions.get('screen');
 
-const SlideItem = ({ item }) => {
+const SlideItem = ({ item, navigation }) => {
   const translateYImage = new Animated.Value(40);
 
   Animated.timing(translateYImage, {
@@ -44,7 +44,7 @@ const SlideItem = ({ item }) => {
         <Text style={styles.title}>{item.title}</Text>
         <Text style={styles.description}>{item.description}</Text>
 
-        <TouchableOpacity style={styles.button}><Text style={styles.bottontext}>Explore NFTs</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Login")}><Text style={styles.bottontext}>Explore NFTs</Text></TouchableOpacity>
       </View>
     </View>
   );

@@ -4,7 +4,7 @@ import Slides from '../data';
 import SlideItem from './SlideItem';
 import Pagination from './Pagination';
 
-const Slider = () => {
+const Slider = ({ navigation }) => {
   const [index, setIndex] = useState(0);
   const scrollX = useRef(new Animated.Value(0)).current;
 
@@ -37,8 +37,9 @@ const Slider = () => {
   return (
     <View>
       <FlatList
+
         data={Slides}
-        renderItem={({ item }) => <SlideItem item={item} />}
+        renderItem={({ item }) => <SlideItem navigation={navigation} item={item} />}
         horizontal
         pagingEnabled
         snapToAlignment="center"
@@ -46,6 +47,7 @@ const Slider = () => {
         onScroll={handleOnScroll}
         onViewableItemsChanged={handleOnViewableItemsChanged}
         viewabilityConfig={viewabilityConfig}
+
       />
       
       <Pagination data={Slides} scrollX={scrollX} index={index} />

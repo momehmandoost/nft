@@ -4,13 +4,14 @@ import Slider from './src/component/Slider';
 import { useFonts } from "expo-font";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
+import Login from './src/pages/Login.jsx';
 
 const Stack = createNativeStackNavigator();
 
-function HomeScreen() {
+function HomeScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <Slider />
+      <Slider navigation={navigation} />
     </SafeAreaView>
   );
 }
@@ -29,6 +30,8 @@ const App = () => {
     <NavigationContainer>
       <StatusBar backgroundColor="purple" barStyle="light-content" />
       <Stack.Navigator>
+
+
         <Stack.Screen
           name="Home"
           component={HomeScreen}
@@ -36,6 +39,17 @@ const App = () => {
             headerShown: false,
           }}
         />
+
+
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{
+            headerShown: false,
+          }}
+        />
+
+
       </Stack.Navigator>
     </NavigationContainer>
   );
