@@ -1,20 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
+import React from 'react';
+import Slider from './src/component/Slider';
+import { useFonts } from "expo-font";
 
-export default function App() {
+const App = () => {
+  const [fontsLoaded] = useFonts({
+    'Inter': require('./assets/fonts/Inter.ttf'),
+    'MuseoModerno': require('./assets/fonts/MuseoModerno-Bold.ttf'),
+
+
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView>
+      <Slider />
+    </SafeAreaView>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
+
+const styles = StyleSheet.create({});
