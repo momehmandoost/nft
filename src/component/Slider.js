@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react';
 import Slides from '../data';
 import SlideItem from './SlideItem';
 import Pagination from './Pagination';
+import { COLORS } from '../../constants/theme';
 
 const Slider = ({ navigation }) => {
   const [index, setIndex] = useState(0);
@@ -35,7 +36,7 @@ const Slider = ({ navigation }) => {
   }).current;
 
   return (
-    <View>
+    <View class={styles.maincontainer}>
       <FlatList
 
         data={Slides}
@@ -49,7 +50,7 @@ const Slider = ({ navigation }) => {
         viewabilityConfig={viewabilityConfig}
 
       />
-      
+
       <Pagination data={Slides} scrollX={scrollX} index={index} />
 
     </View>
@@ -59,6 +60,11 @@ const Slider = ({ navigation }) => {
 export default Slider;
 
 const styles = StyleSheet.create({
+  maincontainer: {
+    flex: 1,
+    backgroundColor: COLORS.primary,
+  },
+
   button: {
     width: "200",
     height: "400"

@@ -54,7 +54,7 @@ export default SlideItem;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#03060e",
+    
     width,
     height,
     alignItems: 'center',

@@ -5,6 +5,7 @@ import { useFonts } from "expo-font";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import Login from './src/pages/Login.jsx';
+import { COLORS } from './constants/theme';
 
 const Stack = createNativeStackNavigator();
 
@@ -58,6 +59,7 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: COLORS.primary,
   },
 });
 
