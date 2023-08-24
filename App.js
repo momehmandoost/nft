@@ -6,10 +6,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import Login from './src/pages/Login.jsx';
 import { COLORS } from './constants/theme';
+import Home from './src/pages/Home';
+import Details from './src/pages/Details';
 
 const Stack = createNativeStackNavigator();
 
-function HomeScreen({ navigation }) {
+function Landing({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <Slider navigation={navigation} />
@@ -19,7 +21,11 @@ function HomeScreen({ navigation }) {
 
 const App = () => {
   const [fontsLoaded] = useFonts({
-    'Inter': require('./assets/fonts/Inter.ttf'),
+    'InterBold': require('./assets/fonts/Inter-Bold.ttf'),
+    'InterSemiBold': require('./assets/fonts/Inter-Bold.ttf'),
+    'InterMedium': require('./assets/fonts/Inter-Bold.ttf'),
+    'InterRegular': require('./assets/fonts/Inter-Bold.ttf'),
+    'InterLight': require('./assets/fonts/Inter-Bold.ttf'),
     'MuseoModerno': require('./assets/fonts/MuseoModerno-Bold.ttf'),
   });
 
@@ -33,9 +39,11 @@ const App = () => {
       <Stack.Navigator>
 
 
+
+
         <Stack.Screen
-          name="Home"
-          component={HomeScreen}
+          name="Landing"
+          component={Landing}
           options={{
             headerShown: false,
           }}
@@ -49,6 +57,18 @@ const App = () => {
             headerShown: false,
           }}
         />
+
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            headerShown: false,
+          }}
+        />
+
+        <Stack.Screen name="Details" component={Details} options={{
+          headerShown: false,
+        }} />
 
 
       </Stack.Navigator>

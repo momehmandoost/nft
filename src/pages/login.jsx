@@ -151,6 +151,8 @@ const Login = ({ navigation }) => {
             marginBottom: 4,
             backgroundColor: COLORS.white,
           }}
+          navigation={navigation}
+          onPress={() => navigation.navigate("Home")}
         />
 
         <View

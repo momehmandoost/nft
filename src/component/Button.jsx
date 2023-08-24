@@ -1,6 +1,6 @@
 import { Text, TouchableOpacity, StyleSheet } from "react-native";
 import React from "react";
-import { COLORS } from "../../constants/theme.js";
+import { COLORS, FONTS } from "../../constants/theme.js";
 
 const Button = (props) => {
   const filledBgColor = props.color || COLORS.primary;
@@ -21,7 +21,7 @@ const Button = (props) => {
         style={{
           fontSize: 18,
           ...{ color: textColor },
-          fontFamily: "MuseoModerno",
+          fontFamily: FONTS.bold,
         }}
       >
         {props.title}

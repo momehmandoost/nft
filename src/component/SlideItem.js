@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
-import { COLORS } from "../../constants/theme.js"
+import { COLORS, FONTS } from "../../constants/theme.js"
 
 const { width, height } = Dimensions.get('screen');
 
@@ -54,7 +54,7 @@ export default SlideItem;
 
 const styles = StyleSheet.create({
   container: {
-    
+
     width,
     height,
     alignItems: 'center',
@@ -97,6 +97,6 @@ const styles = StyleSheet.create({
   bottontext: {
     fontSize: 20,
     color: COLORS.primary,
-    fontFamily: "MuseoModerno"
+    fontFamily: FONTS.bold
   }
 });
